@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Sale Fund Raiser</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Conestoga Garage sale</h1>
+<h2>Rising money for The Front Line Fund</h2>
+
+<form id="garageSaleForm">
+    <label for="name" style="margin: 10px;">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+
+    <label for="email" style="margin: 10px;">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <label for="creditCard" style="margin: 10px;">Credit Card:</label>
+    <input type="text" id="creditCard" name="creditCard" pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+    <br><br>
+
+    <label for="creditCardExpiryMonth" style="margin: 10px;">Credit Card Expiry Month:</label>
+    <input type="text" id="creditCardExpiryMonth" name="creditCardExpiryMonth" pattern="[A-Za-z]{3}" placeholder="MMM" required>
+    <br><br>
+
+    <label for="creditCardExpiryYear" style="margin: 10px;">Credit Card Expiry Year:</label>
+    <input type="text" id="creditCardExpiryYear" name="creditCardExpiryYear" pattern="\d{4}" placeholder="YYYY" required>
+    <br><br>
+
+    <h3>Buy generously</h3>
+    <br><br>
+
+    <label for="NumberofWaterBottles" style="margin: 10px;">Number of Water Bottles ($5):</label>
+    <input type="text" id="NumberofWaterBottles" name="NumberofWaterBottles" pattern="\d{1,}" placeholder="0" required>
+    <br><br>
+
+    <label for="NumberofCaps" style="margin: 10px;">Number of Caps ($20):</label>
+    <input type="text" id="NumberofCaps" name="NumberofCaps" pattern="\d{1,}" placeholder="0" required>
+    <br><br>
+
+    <label for="NumberofPens" style="margin: 10px;">Number of Pens ($20):</label>
+    <input type="text" id="NumberofPens" name="NumberofPens" pattern="\d{1,}" placeholder="0" required>
+    <br><br>
+
+    <label for="NumberofCandyBags" style="margin: 10px;">Number of Candy Bags ($20):</label>
+    <input type="text" id="NumberofCandyBags" name="NumberofCandyBags" pattern="\d{1,}" placeholder="0" required>
+    <br><br>
+
+    <label for="Cupcakes" style="margin: 10px;">Cupcakes ($20):</label>
+    <input type="text" id="Cupcakes" name="Cupcakes" pattern="\d{1,}" placeholder="0" required>
+    <br><br>
+
+    <button type="button" onclick="Checkout()">Checkout</button>
+</form>
+
+<div id="errorMessages"></div>
+
+<div id="receipt" style="display:none">
+    <h3>Receipt</h3>
+    <p><strong>Name:</strong> <span id="receiptName"></span></p>
+    <p><strong>Email:</strong> <span id="receiptEmail"></span></p>
+    <p><strong>Credit Card:</strong> <span id="receiptCreditCard"></span></p>
+    <div id="receiptDetails"></div>
+    <p><strong>Total Cost:</strong> $<span id="receiptTotal"></span></p>
+    <p><strong>Donation Amount:</strong> $<span id="receiptDonation"></span></p>
+</div>
+
+</body>
+</html>
